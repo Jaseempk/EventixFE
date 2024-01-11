@@ -8,13 +8,13 @@ import {
 } from "wagmi";
 import { readContract, waitForTransaction, writeContract } from "wagmi/actions";
 
-export default function TicketMint() {
+function TicketMint() {
   const [loading, setLoading] = useState(false);
   const [price, setPrice] = useState();
   const [tier, setTier] = useState();
   const [date, setDate] = useState();
   const [daysToEvent, setDaysToEvent] = useState();
-  const [address, setAddress] = useState();
+  const [address, setAddress] = useState("");
   const [tokenURI, setTokenURI] = useState("");
 
   const tikcketMintFunc = useContractWrite({
@@ -23,4 +23,20 @@ export default function TicketMint() {
     functionName: "ticketMint",
     args: [price, tier, date, daysToEvent, address, tokenURI],
   });
+
+  return (
+    <>
+      <div>
+        <input type="number" onChange={(e) => setPrice(e.target.value)} />
+        <input type="number" onChange={(e) => setTier(e.target.value)} />
+        <input type="number" onChange={(e) => setDate(e.target.value)} />
+        <input type="number" onChange={(e) => setDaysToEvent(e.target.value)} />
+        <input type="string" onChange={(e) => setAddress(e.target.value)} />
+        <input type="string" onChange={(e) => setTokenURI(e.target.value)} />
+        <button onClick={() => tikcketMintFunc()}>BookTicket</button>
+      </div>
+    </>
+  );
 }
+
+export default TicketMint;

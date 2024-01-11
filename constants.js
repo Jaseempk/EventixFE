@@ -638,47 +638,6 @@ export const EventixABI = [
     {
         "inputs": [
             {
-                "components": [
-                    {
-                        "internalType": "address",
-                        "name": "seller",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "address",
-                        "name": "buyer",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "ticketId",
-                        "type": "uint256"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "price",
-                        "type": "uint256"
-                    }
-                ],
-                "internalType": "struct ISale.Sale",
-                "name": "mySale",
-                "type": "tuple"
-            }
-        ],
-        "name": "encodeSale",
-        "outputs": [
-            {
-                "internalType": "bytes",
-                "name": "",
-                "type": "bytes"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
                 "internalType": "uint256",
                 "name": "_ticketId",
                 "type": "uint256"
@@ -766,6 +725,19 @@ export const EventixABI = [
                 "internalType": "enum Eventix.Tier",
                 "name": "",
                 "type": "uint8"
+            }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getTypeHash",
+        "outputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
             }
         ],
         "stateMutability": "pure",

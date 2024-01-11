@@ -1,5 +1,6 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import "@/styles/globals.css";
+import { TicketMint } from "./components/TicketMint";
+import { DirectSale } from "./components/TicketDirectSale";
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
@@ -25,6 +26,8 @@ export default function App({ Component, pageProps }) {
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
         <Component {...pageProps} />
+        <TicketMint />
+        <DirectSale />
       </RainbowKitProvider>
     </WagmiConfig>
   );
