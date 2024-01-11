@@ -27,13 +27,14 @@ function TicketMint() {
   return (
     <>
       <div>
+        <form onSubmit={() => tikcketMintFunc()}></form>
         <input type="number" onChange={(e) => setPrice(e.target.value)} />
         <input type="number" onChange={(e) => setTier(e.target.value)} />
         <input type="number" onChange={(e) => setDate(e.target.value)} />
         <input type="number" onChange={(e) => setDaysToEvent(e.target.value)} />
         <input type="string" onChange={(e) => setAddress(e.target.value)} />
         <input type="string" onChange={(e) => setTokenURI(e.target.value)} />
-        <button onClick={() => tikcketMintFunc()}>BookTicket</button>
+        <button type="submit">BookTicket</button>
       </div>
     </>
   );
